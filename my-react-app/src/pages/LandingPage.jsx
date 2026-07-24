@@ -4,6 +4,8 @@ import school_cca_preview from "../assets/school_cca_preview.png";
 import hdb_resale_preview from "../assets/hdb_resale_preview.png";
 import edulift_preview from "../assets/edulift_preview.png";
 import { motion } from "motion/react";
+import { Canvas } from "@react-three/fiber";
+import ParticleNetwork from "../ParticleNetwork";
 
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
@@ -142,28 +144,38 @@ const LandingPage = () => {
       {/* Home */}
       <motion.div
         id="home"
-        className="min-h-screen  flex flex-col justify-center p-5 md:p-10 "
+        className="min-h-screen  flex flex-col justify-center p-5 md:p-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
       >
-        <span className="font-mono text-green-400 font-sm font-bold mb-4">
-          {"> ./initialize_profile.sh"}
-        </span>
-        <span className="font-sans text-7xl text-gray-300 font-bold mb-2">
-          SOE YAN NAING
-        </span>
-        <span className="font-sans text-4xl text-neutral-700 font-semibold tracking-wider mb-4">
-          ENGINEERED FOR PERFORMANCE
-          <span className="animate-blink">_</span>
-        </span>
-        <p className="font-sans text-sm text-green-400 max-w-lg mb-4">
-          Executing high-fidelity web applications. Specializing in robust
-          architectures and seamless user experiences. System ready
-        </p>
-        <button className="w-full max-w-[150px] font-mono text-sm  text-green-400 transition-all duration-300 hover:bg-green-400 hover:text-black hover:border-green-400 cursor-pointer">
-          [ VIEW_MODULES ]
-        </button>
+        {/* Left side */}
+        <div className="z-10 flex flex-col justify-center max-w-2xl">
+          <span className="font-mono text-green-400 font-sm font-bold mb-4">
+            {"> ./initialize_profile.sh"}
+          </span>
+          <span className="font-sans text-7xl text-gray-300 font-bold mb-2">
+            SOE YAN NAING
+          </span>
+          <span className="font-sans text-4xl text-neutral-700 font-semibold tracking-wider mb-4">
+            ENGINEERED FOR PERFORMANCE
+            <span className="animate-blink">_</span>
+          </span>
+          <p className="font-sans text-sm text-green-400 max-w-lg mb-4">
+            Executing high-fidelity web applications. Specializing in robust
+            architectures and seamless user experiences. System ready
+          </p>
+          <button className="w-full max-w-[150px] font-mono text-sm  text-green-400 transition-all duration-300 hover:bg-green-400 hover:text-black hover:border-green-400 cursor-pointer">
+            [ VIEW_MODULES ]
+          </button>
+        </div>
+
+        {/* RIGHT SIDE: The 3D Animation */}
+        <div className="absolute top-0 right-0 w-full md:w-3/4 h-full pointer-events-none opacity-50 md:opacity-100">
+          <Canvas camera={{ position: [0, 0, 5], fov: 90 }}>
+            <ParticleNetwork />
+          </Canvas>
+        </div>
       </motion.div>
       {/* About */}
       <motion.div
