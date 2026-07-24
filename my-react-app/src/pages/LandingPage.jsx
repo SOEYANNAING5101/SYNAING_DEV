@@ -3,6 +3,7 @@ import banking_preview from "../assets/banking_preview.png";
 import school_cca_preview from "../assets/school_cca_preview.png";
 import hdb_resale_preview from "../assets/hdb_resale_preview.png";
 import edulift_preview from "../assets/edulift_preview.png";
+import { motion } from "motion/react";
 const LandingPage = () => {
   const skills = [
     { name: "JavaScript" },
@@ -136,9 +137,12 @@ const LandingPage = () => {
         </a>
       </div>
       {/* Home */}
-      <div
+      <motion.div
         id="home"
         className="min-h-screen  flex flex-col justify-center p-5 md:p-10 "
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
       >
         <span className="font-mono text-green-400 font-sm font-bold mb-4">
           {"> ./initialize_profile.sh"}
@@ -157,9 +161,16 @@ const LandingPage = () => {
         <button className="w-full max-w-[150px] font-mono text-sm  text-green-400 transition-all duration-300 hover:bg-green-400 hover:text-black hover:border-green-400 cursor-pointer">
           [ VIEW_MODULES ]
         </button>
-      </div>
+      </motion.div>
       {/* About */}
-      <div id="about" className=" p-5 md:p-10 scroll-mt-24">
+      <motion.div
+        id="about"
+        className=" p-5 md:p-10 scroll-mt-24"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
         <p className="font-mono text-green-400 font-sm font-bold mb-4 md:mb-8">
           {"> cat /var/log/system_status.log"}
         </p>
@@ -193,9 +204,16 @@ const LandingPage = () => {
             </span>
           </p>
         </div>
-      </div>
+      </motion.div>
       {/* Experience */}
-      <div id="experience" className="p-5 md:p-10 scroll-mt-24">
+      <motion.div
+        id="experience"
+        className="p-5 md:p-10 scroll-mt-24"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
         <p className="font-mono text-green-400 font-sm font-bold mb-4 md:mb-8">
           {"> history | grep 'experience'"}
         </p>
@@ -222,15 +240,21 @@ const LandingPage = () => {
             </span>
           </div>
         </div>
-      </div>
+      </motion.div>
       {/* Projects */}
       <div id="projects" className="p-5 md:p-10 scroll-mt-24">
         <p className="font-mono text-green-400 font-sm font-bold mb-4 md:mb-8">
           {"> ls -ls ./projects"}
         </p>
         <div className="gap-4 grid grid-cols-1 md:grid-cols-2">
-          {projectData.map((project) => (
-            <div className="w-full bg-[repeating-linear-gradient(0deg,#2d2d2d,#2d2d2d_2px,#252525_2px,#252525_4px)] p-6 sm:p-8">
+          {projectData.map((project,index) => (
+            <motion.div
+              className="w-full bg-[repeating-linear-gradient(0deg,#2d2d2d,#2d2d2d_2px,#252525_2px,#252525_4px)] p-6 sm:p-8"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.3 }}
+            >
               <h1 className="text-white font-bold font-mono font-bold text-xl md:text-2xl mb-5">
                 {project.permission}
               </h1>
@@ -256,12 +280,16 @@ const LandingPage = () => {
               >
                 [ VIEW DETAILS ]
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
       {/* Skills */}
-      <div id="skills" className="p-5 md:p-10 scroll-mt-24">
+      <motion.div id="skills" className="p-5 md:p-10 scroll-mt-24"
+                    initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.3 }}>
         <p className="font-mono text-green-400 font-sm font-bold mb-4 md:mb-8">
           {"> cat /var/log/system_status.log"}
         </p>
@@ -277,9 +305,12 @@ const LandingPage = () => {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
       {/* Hobbies */}
-      <div id="hobbies" className="p-5 md:p-10 scroll-mt-24">
+      <motion.div id="hobbies" className="p-5 md:p-10 scroll-mt-24"                     initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.3 }}>
         <p className="font-mono text-green-400 font-sm font-bold mb-4 md:mb-8">
           {"> npm list --depth=0"}
         </p>
@@ -295,11 +326,15 @@ const LandingPage = () => {
             and Films
           </p>
         </div>
-      </div>
+      </motion.div>
       {/* Contact */}
-      <div
+      <motion.div
         id="contact"
         className="bg-neutral-900 w-full p-5 md:p-10 flex flex-col md:flex-row items-center gap-4 w-full justify-between scroll-mt-24"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, delay: 0.3 }}
       >
         <span className="font-mono text-base font-bold text-gray-200">
           SYNAING.DEV
@@ -340,7 +375,7 @@ const LandingPage = () => {
         <p className="text-center font-mono text-sm font-bold text-cyan-400">
           2024 SOE YAN NAING. ENGINEERED FOR PERFORMANCE
         </p>
-      </div>
+      </motion.div>
 
       {/* Project Modal */}
       {selectedProject && (
