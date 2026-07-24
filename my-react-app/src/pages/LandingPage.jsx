@@ -4,6 +4,9 @@ import school_cca_preview from "../assets/school_cca_preview.png";
 import hdb_resale_preview from "../assets/hdb_resale_preview.png";
 import edulift_preview from "../assets/edulift_preview.png";
 import { motion } from "motion/react";
+
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 const LandingPage = () => {
   const skills = [
     { name: "JavaScript" },
@@ -247,7 +250,7 @@ const LandingPage = () => {
           {"> ls -ls ./projects"}
         </p>
         <div className="gap-4 grid grid-cols-1 md:grid-cols-2">
-          {projectData.map((project,index) => (
+          {projectData.map((project, index) => (
             <motion.div
               className="w-full bg-[repeating-linear-gradient(0deg,#2d2d2d,#2d2d2d_2px,#252525_2px,#252525_4px)] p-6 sm:p-8"
               initial={{ opacity: 0, y: 40 }}
@@ -285,11 +288,14 @@ const LandingPage = () => {
         </div>
       </div>
       {/* Skills */}
-      <motion.div id="skills" className="p-5 md:p-10 scroll-mt-24"
-                    initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.3 }}>
+      <motion.div
+        id="skills"
+        className="p-5 md:p-10 scroll-mt-24"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
         <p className="font-mono text-green-400 font-sm font-bold mb-4 md:mb-8">
           {"> cat /var/log/system_status.log"}
         </p>
@@ -307,10 +313,14 @@ const LandingPage = () => {
         </div>
       </motion.div>
       {/* Hobbies */}
-      <motion.div id="hobbies" className="p-5 md:p-10 scroll-mt-24"                     initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.3 }}>
+      <motion.div
+        id="hobbies"
+        className="p-5 md:p-10 scroll-mt-24"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
         <p className="font-mono text-green-400 font-sm font-bold mb-4 md:mb-8">
           {"> npm list --depth=0"}
         </p>
@@ -327,6 +337,25 @@ const LandingPage = () => {
           </p>
         </div>
       </motion.div>
+      {/* View resume button */}
+      <motion.div
+        id="hobbies"
+        className="p-5 md:p-10 scroll-mt-24 flex items-center justify-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
+        <a
+          href="Soe_Yan_Naing_Resume_FullStack.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-mono text-sm border hover:border-green-400 hover:bg-transparent px-4 py-1.5 hover:text-green-400 transition-all duration-300 bg-green-400 text-black border-green-400 cursor-pointer"
+        >
+          Resume
+        </a>
+      </motion.div>
+
       {/* Contact */}
       <motion.div
         id="contact"
@@ -408,11 +437,13 @@ const LandingPage = () => {
               {/* Preview picture */}
               {selectedProject.image && (
                 <div className="w-full mb-6">
-                  <img
-                    alt={`${selectedProject.title} preview`}
-                    src={selectedProject.image}
-                    className="w-full h-full"
-                  />
+                  <Zoom>
+                    <img
+                      alt={`${selectedProject.title} preview`}
+                      src={selectedProject.image}
+                      className="w-full h-full"
+                    />
+                  </Zoom>
                 </div>
               )}
               {/* Description */}
@@ -436,11 +467,11 @@ const LandingPage = () => {
               <p className="font-mono text-sm font-bold text-cyan-400 mb-2">
                 # TECH_STACK
               </p>
-              <div className="flex gap-2 mb-4">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {selectedProject.tech.map((tech, index) => (
                   <div
                     key={index}
-                    className="border border-gray-400 font-mono md:text-sm text-xs text-gray-400 px-2 py-1"
+                    className="border border-gray-400 font-mono md:text-sm text-xs text-gray-400 px-2 py-1 whitespace-wrap"
                   >
                     {tech}
                   </div>
