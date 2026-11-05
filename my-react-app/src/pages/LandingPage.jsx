@@ -133,7 +133,7 @@ const LandingPage = () => {
           </a>
         </div>
         <a
-          href="Soe_Yan_Naing_Resume_FullStack.pdf"
+          href="Soe_Yan_Naing_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="font-mono text-sm border border-green-400 px-4 py-1.5 text-green-400 transition-all duration-300 hover:bg-green-400 hover:text-black hover:border-green-400 cursor-pointer"
@@ -359,7 +359,7 @@ const LandingPage = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <a
-          href="Soe_Yan_Naing_Resume_FullStack.pdf"
+          href="Soe_Yan_Naing_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="font-mono text-sm border hover:border-green-400 hover:bg-transparent px-4 py-1.5 hover:text-green-400 transition-all duration-300 bg-green-400 text-black border-green-400 cursor-pointer"
@@ -414,7 +414,7 @@ const LandingPage = () => {
           </a>
         </div>
         <p className="text-center font-mono text-sm font-bold text-cyan-400">
-          2024 SOE YAN NAING. ENGINEERED FOR PERFORMANCE
+          2026 SOE YAN NAING. ENGINEERED FOR PERFORMANCE
         </p>
       </motion.div>
 
