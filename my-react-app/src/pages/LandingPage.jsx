@@ -133,7 +133,7 @@ const LandingPage = () => {
           </a>
         </div>
         <a
-          href="Soe_Yan_Naing_Resume.pdf"
+          href="Soe_Yan_Naing_Resume_Software_Engineer.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="font-mono text-sm border border-green-400 px-4 py-1.5 text-green-400 transition-all duration-300 hover:bg-green-400 hover:text-black hover:border-green-400 cursor-pointer"
@@ -359,7 +359,7 @@ const LandingPage = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <a
-          href="Soe_Yan_Naing_Resume.pdf"
+          href="Soe_Yan_Naing_Resume_Software_Engineer.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="font-mono text-sm border hover:border-green-400 hover:bg-transparent px-4 py-1.5 hover:text-green-400 transition-all duration-300 bg-green-400 text-black border-green-400 cursor-pointer"
